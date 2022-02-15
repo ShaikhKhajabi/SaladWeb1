@@ -1,0 +1,139 @@
+*{
+    margin: 0;
+}
+
+html,
+body{
+    height: 100%;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #fff;
+}
+
+p{
+    margin: 0.5em 0 0.5em 0;
+}
+
+.simg{
+    height: 200px;
+}
+
+header{
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: green;
+    padding: 10px;
+}
+
+footer{
+    display: block;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: green;
+    padding: 10px;
+}
+
+nav a:visited,
+nav a:link{
+    color: #fff;
+    text-decoration: none;
+}
+
+nav > ul{
+    display: inline;
+    padding: 0;
+}
+
+nav > ul > li{
+    display: inline-block;
+    list-style: none;
+    margin: 0 5px 0 5px;
+}
+
+main{
+    display: block;
+    background-image: url("/images/backgc.jpg");
+    padding-top: 3em;
+    padding-bottom: 3em;
+    min-height: 85%;
+}
+
+footer{
+    padding: 15px;
+}
+
+aside,
+article{
+    padding: 2em;
+}
+
+aside{
+    text-align: center;
+}
+
+article{
+    width: 75%;
+}
+
+.fs{
+    font-weight: bold;
+}
+
+.columns{
+    display: flex;
+}
+
+@media only screen and (min-width: 768px){
+    main{
+        display: flex;
+    }
+    
+    aside{
+        margin-left: 2%;
+    }
+    .columns-desktop{
+        display: flex;
+    }
+    
+}
+.salad{
+    width: 200px;
+    padding: 10px;
+    margin: 10px;
+    background-color: #fff;
+    border: solid 1px lightgreen;
+}
+
+.salad img{
+    width: 100%;
+}
+
+.salad .title{
+    font-weight: bold;
+}
+
+.salad .columns{
+    width: 100%;
+}
+
+.salad .columns div{
+    width: 50%;
+}
+
+.salad button{
+    background-color: #90ee90;
+    padding: 10px;
+    border: solid 1px #90ee90;
+    border-radius: 5px;
+    color: #fff;
+}
+.salad button:hover{
+    background-color: green;
+}
