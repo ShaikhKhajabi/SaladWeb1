@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" type="text/css"/>
+    <title>Contact | Green Corner</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="salads.html">Salads</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <aside><img src="images/logogc.png" alt="Green Corner"/></aside>
+        <article>
+            <h1>Salads</h1>
+            <section class="columns-desktop">
+                <div class="salad">
+                    <img src="images/veg-gc.jpg" class="simg" alt="Veg Salad" />
+                    <div class="columns">
+                        <div class="title">Veg Salad</div>
+                        <div class="price">299 Rs</div>
+                    </div>
+                    <p class="desc">Our Famous Veg Salad</p>
+                    <button data-order="veg-gc">Order</button>
+                </div>
+                <div class="salad">
+                    <img src="images/fruit-gc.jpg" class="simg" alt="Fruit Salad" />
+                    <div class="columns">
+                        <div class="title">Fruit Salad</div>
+                        <div class="price">349 Rs</div>
+                    </div>
+                    <p class="desc">Our Famous Fruit Salad</p>
+                    <button data-order="fruit-gc">Order</button>
+                </div>
+            </section>
+        </article>    
+    </main>
+    <footer>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="salads.html">Salads</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </footer>
+</body>
+<script>
+    window.addEventListener("DOMContentLoaded", function(e) {
+        const orderButton = document.querySelectorAll("button[data-order]");
+        orderButton.forEach(function(button) {
+            button.addEventListener("click", function(e) {
+                const button = e.currentTarget;
+                const container = button.parentNode;
+
+                const order= {
+                    id: button.getAttribute("data-order"),
+                    title: container.querySelector(".title").innerText,
+                    price: container.querySelector(".price").innerText,
+                    desc: container.querySelector(".desc").innerText,
+                };
+                localStorage.setItem("order", JSON.stringify(order));
+
+                const url = window.location.href.replace("salads.html","order.html");
+                window.location.href = url;
+            });
+        });
+        
+    });
+</script>
+</html>
